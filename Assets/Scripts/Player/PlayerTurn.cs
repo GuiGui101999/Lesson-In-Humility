@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTurn : MonoBehaviour
+public class PlayerTurn : Interactor
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Player Turn")]
+    [SerializeField] private float turnSpeed = 10.0f; //For rotation of the head
 
-    // Update is called once per frame
-    void Update()
+    public override void Interact()
     {
-        
+        //Player turn movement
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * playerInput.mouseX); //Vector up and down refers to the X axis.
     }
 }
