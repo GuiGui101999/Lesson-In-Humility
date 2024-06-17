@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float groundCheckDistance;
+    [SerializeField] private float gravity = -9.81f;
 
     private CharacterController characterController;
     private Vector3 playerVelocity;
@@ -51,6 +52,13 @@ public class PlayerMovement : MonoBehaviour
             playerVelocity.y = -2f;
         }
 
+        playerVelocity.y += gravity * Time.deltaTime; //Set up movement of the Jump itself
+
         characterController.Move(playerVelocity * Time.deltaTime);
+    }
+
+    public void SetYVelocity(float value)
+    {
+        playerVelocity.y = value;
     }
 }
