@@ -56,7 +56,7 @@ public class PlayerInput : MonoBehaviour //This script should be called before e
         sprintHeld = sprintHeld || Input.GetButton("Sprint"); //sprintHeld or Input
         activatePressed = activatePressed || Input.GetKeyDown(KeyCode.E);
         readPressed = readPressed || Input.GetKeyDown(KeyCode.F);
-        exitPressed = exitPressed || Input.GetKeyDown(KeyCode.Escape);
+        exitPressed = exitPressed || Input.GetKeyDown(KeyCode.M);
     }
 
     private void FixedUpdate()

@@ -8,12 +8,12 @@ public class UiManager : MonoBehaviour
     public static UiManager Instance;
 
     [SerializeField] private Health playerHealth;
-    [SerializeField] private GameObject GameOverEvent;
-    [SerializeField] private GameObject GameEndCutscene;
+    //[SerializeField] private GameObject GameOverEvent;
+    //[SerializeField] private GameObject GameEndCutscene;
 
     [Header("UI Elements")]
     public TMP_Text healthTxt;
-    //public GameObject gameOverTxt; //Game object because we don't need a text and using a text as a game object due to use of images.
+    public GameObject gameOverTxt; //Game object because we don't need a text and using a text as a game object due to use of images.
     //public GameObject gameSuccessTxt;
 
     private void Awake()
@@ -48,7 +48,7 @@ public class UiManager : MonoBehaviour
     public void OnDeath()
     {
         //GameOverEvent.SetActive(true);
-        //gameOverTxt.SetActive(true);
+        gameOverTxt.SetActive(true);
     }
 
     public void OnGameSuccess()

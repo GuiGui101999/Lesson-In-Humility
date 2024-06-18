@@ -8,6 +8,7 @@ public class PickOrb : MonoBehaviour, IPick
     Rigidbody orbRb;
     [SerializeField] private GameObject orbOfAbsolution;
     [SerializeField] public GameObject someGameObject;
+    [SerializeField] private GameObject failUI;
     [SerializeField] public float enableDuration = 3f;
 
     private void Start()
@@ -41,6 +42,12 @@ public class PickOrb : MonoBehaviour, IPick
         StartCoroutine(EnableAndDisableGameObject());
     }
 
+    public void PlacedOnWrongPad()
+    {
+        Debug.Log("Uh oh, wrong pad!");
+        EnableAndDisableFailUI();
+    }
+
     private IEnumerator EnableAndDisableGameObject()
     {
         someGameObject.SetActive(true);
@@ -50,5 +57,12 @@ public class PickOrb : MonoBehaviour, IPick
         someGameObject.SetActive(false);
         Destroy(orbOfAbsolution);
         orbOfAbsolution = null;
+    }
+
+    private IEnumerator EnableAndDisableFailUI()
+    {
+        failUI.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        failUI.SetActive(false);
     }
 }

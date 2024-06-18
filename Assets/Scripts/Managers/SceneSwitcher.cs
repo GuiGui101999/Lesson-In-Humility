@@ -6,13 +6,11 @@ using UnityEngine.Events;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    //public UnityEvent onEscapePressed;
-    private PlayerInput playerInput;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerInput = PlayerInput.GetInstance();
+
     }
 
     void Update()
@@ -24,13 +22,4 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-
-    //public void ReturnToMainMenu()
-    //{
-        //if (playerInput.exitPressed)
-        //{
-            //Debug.Log("Escape was pressed");
-            //onEscapePressed.Invoke();
-        //}
-    //}
 }
