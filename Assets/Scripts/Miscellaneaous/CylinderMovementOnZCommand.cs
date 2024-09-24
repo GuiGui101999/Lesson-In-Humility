@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CylinderMovementCommand : CylinderCommand
+public class CylinderMovementOnZCommand : CylinderCommand
 {
     private CylinderController receiver;
     private Vector3 direction;
     private Vector3 originalPosition;
 
-    public CylinderMovementCommand(CylinderController receiver, Vector3 direction)
+    public CylinderMovementOnZCommand(CylinderController receiver, Vector3 direction)
     {
         this.receiver = receiver;
-        this.direction = Vector3.right;
+        this.direction = Vector3.forward;
     }
 
     public override void Execute()
     {
         originalPosition = receiver.transform.position;
-        receiver.MoveOnX(direction);
+        receiver.MoveOnZ(direction);
     }
 
     public override void Undo()
     {
-        receiver.MoveOnX(direction * -1);
+        receiver.MoveOnZ(direction * -1);
     }
 }

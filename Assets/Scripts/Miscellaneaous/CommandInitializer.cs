@@ -12,7 +12,8 @@ public class CommandInitializer : MonoBehaviour
 
         if (cylinderController != null && commandHolder != null)
         {
-            commandHolder.movementCommand = new CylinderMovementCommand(cylinderController, Vector3.right, commandHolder.movementCommand.moveAmount);
+            commandHolder.movementOnXCommand = new CylinderMovementCommand(cylinderController, Vector3.right);
+            commandHolder.movementOnZCommand = new CylinderMovementOnZCommand(cylinderController, Vector3.forward);
         }
     }
 }

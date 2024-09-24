@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class CommandHolder : MonoBehaviour
 {
-    public CylinderMovementCommand movementCommand;
+    public CylinderMovementCommand movementOnXCommand;
+    public CylinderMovementOnZCommand movementOnZCommand;
 
-    public void ExecuteMovementCommand()
+    public void ExecuteMovementOnXCommand()
     {
-        if (movementCommand != null)
+        if (movementOnXCommand != null)
         {
-            movementCommand.Execute();
+            movementOnXCommand.Execute();
         }
     }
-    public void UndoMovementCommand()
+    public void UndoMovementOnXCommand()
     {
-        if (movementCommand != null)
+        if (movementOnXCommand != null)
         {
-            movementCommand.Undo();
+            movementOnXCommand.Undo();
+        }
+    }
+
+    public void ExecuteMovementOnZCommand()
+    {
+        if (movementOnZCommand != null)
+        {
+            movementOnZCommand.Execute();
+        }
+    }
+
+    public void UndoMovementOnZCommand()
+    {
+        if (movementOnZCommand != null)
+        {
+            movementOnZCommand.Undo();
         }
     }
 }
