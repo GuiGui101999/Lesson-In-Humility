@@ -137,7 +137,6 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("Well, Level Game Over and You Lose");
-        playerController.GetComponent<CharacterController>().enabled = false;
         uiManager.OnDeath();
     }
     private void GameEnd()

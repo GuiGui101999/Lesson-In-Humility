@@ -8,13 +8,13 @@ public class UiManager : MonoBehaviour
     public static UiManager Instance;
 
     [SerializeField] private Health playerHealth;
-    //[SerializeField] private GameObject GameOverEvent;
-    //[SerializeField] private GameObject GameEndCutscene;
+
+    public CharacterController playerController;
 
     [Header("UI Elements")]
     public TMP_Text healthTxt;
-    public GameObject gameOverTxt; //Game object because we don't need a text and using a text as a game object due to use of images.
-    //public GameObject gameSuccessTxt;
+    public GameObject gameOverTxt; 
+
 
     private void Awake()
     {
@@ -27,12 +27,10 @@ public class UiManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        //gameOverTxt.SetActive(false);
-        //GameOverEvent.SetActive(false);
-        //gameSuccessTxt.SetActive(false);
+
     }
 
     private void OnEnable() //Only gets called when object becomes enabled within the scene.
@@ -47,14 +45,13 @@ public class UiManager : MonoBehaviour
     }
     public void OnDeath()
     {
-        //GameOverEvent.SetActive(true);
+        playerController.GetComponent<CharacterController>().enabled = false;
         gameOverTxt.SetActive(true);
     }
 
     public void OnGameSuccess()
     {
-        //GameEndCutscene.SetActive(true);
-        //gameSuccessTxt.SetActive(true);
+
     }
 
     private void OnDestroy()

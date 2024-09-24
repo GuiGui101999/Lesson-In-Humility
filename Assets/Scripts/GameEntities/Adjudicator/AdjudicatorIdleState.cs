@@ -29,6 +29,7 @@ public class AdjudicatorIdleState : AdjudicatorState
     {
         Debug.Log("Entered Idle Update");
         PatrolAtPosition();
+        adjudicator.supremeLaser.SetActive(false);
         if (Physics.SphereCast(adjudicator.enemyEye.position, adjudicator.checkRadius, adjudicator.transform.forward, out RaycastHit hit, adjudicator.playerDistance))
         {
             if (hit.transform.CompareTag("Player"))

@@ -9,6 +9,7 @@ public class AdjudicatorController : MonoBehaviour
     public Transform[] targetPoints;
     [SerializeField] private Transform targetPointsParent;
     public GameObject playerObject;
+    public GameObject supremeLaser;
 
     [Range(0f, 0.5f)]
     public float accuracy = 0.1f;

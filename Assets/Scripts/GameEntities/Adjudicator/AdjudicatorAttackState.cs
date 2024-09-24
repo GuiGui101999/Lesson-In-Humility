@@ -26,6 +26,7 @@ public class AdjudicatorAttackState : AdjudicatorState
     public override void OnStateUpdate()
     {
         Attack();
+        adjudicator.supremeLaser.SetActive(true);
         if (adjudicator.player != null)
         {
             //Attack Player
