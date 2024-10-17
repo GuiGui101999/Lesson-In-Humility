@@ -1,2 +1,2 @@
-# Lesson-In-Humility
-For Capstone
+# MAZE Project (Title - Sanctimony)
+
